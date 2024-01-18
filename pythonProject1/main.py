@@ -6,8 +6,7 @@ import pandas
 BACKGROUND_COLOR = "#B1DDC6"
 current_card = {}
 words_learn_dict = {}
-words_to_remove = []
-words_to_remove2 = []
+
 data = pandas.read_csv("./data/french_words.csv")
 to_learn = data.to_dict(orient="records")
 print(to_learn)
@@ -40,7 +39,6 @@ def generate():
 
 
 
-
 def is_known():
     print(current_card)
     to_learn.remove(current_card)
@@ -51,9 +49,6 @@ def is_known():
     pd.to_csv("words_to_learn.csv", index=False)
     generate()
 
-
-#TODO WE NEED TO MAKE A NEW FUNCTION TO PASS IN THE NEW ENG TEXT EVERY 3 SEC
-#We click the button, it starts French, then 3 sec later it becomes Eng, click button resets
 
 def card_flip():
 
